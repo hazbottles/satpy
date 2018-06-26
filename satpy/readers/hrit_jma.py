@@ -135,7 +135,12 @@ class HRITJMAFileHandler(HRITFileHandler):
 
         projection_name = self.mda['projection_name'].decode()
         sublon = float(projection_name.strip().split('(')[1][:-1])
-        self.mda['projection_parameters']['SSP_longitude'] = sublon
+        self.mda['projection_parameters'] = {
+            'a': 6378137.0,
+            'b': 6356752.3,
+            'h': 35785863.,  # 42164000. - 6378137.,
+            'SSP_longitude': sublon,
+        }
 
     def get_area_def(self, dsid):
         """Get the area definition of the band."""

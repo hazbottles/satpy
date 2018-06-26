@@ -22,6 +22,9 @@
 
 """HRIT format reader
 
+References:
+LRIT/HRIT Global Specification
+    https://www.cgms-info.org/documents/cgms-lrit-hrit-global-specification-(v2-8-of-30-oct-2013).pdf
 """
 
 import logging
